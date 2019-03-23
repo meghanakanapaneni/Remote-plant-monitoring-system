@@ -1,0 +1,65 @@
+
+  <script type="text/javascript">
+  window.onload = function () {
+	var a=[0,0,0,0,0,0,0,0]
+	var year=[0,0,0,0,0,0,0,0]
+	var month=[0,0,0,0,0,0,0,0]
+var day=[0,0,0,0,0,0,0,0]
+var hour=[0,0,0,0,0,0,0,0]
+var minute=[0,0,0,0,0,0,0,0]
+	var count=0;
+    	{% for i in received_data %}
+		a[count]={{i.temperature}}
+		year[count]={{i.year}}
+		month[count]={{i.month}}
+	day[count]={{i.day}}
+	hour[count]={{i.hour}}
+	minute[count]={{i.minute}}
+		count++;
+	{% endfor %}
+       var tem=[
+      { x: new Date(Number(year[0]),Number(month[0])-1,Number(day[0]),Number(hour[0]),Number(minute[0])), y: Number(a[0])},
+        { x: new Date(Number(year[1]),Number(month[1])-1,Number(day[1]),Number(hour[1]),Number(minute[1])), y: Number(a[1])},
+        { x: new Date(Number(year[2]),Number(month[2])-1,Number(day[2]),Number(hour[2]),Number(minute[2])), y: Number(a[2])},
+        { x: new Date(Number(year[3]),Number(month[3])-1,Number(day[3]),Number(hour[3]),Number(minute[3])), y: Number(a[3])},
+        { x: new Date(Number(year[4]),Number(month[4])-1,Number(day[4]),Number(hour[4]),Number(minute[4])), y: Number(a[4])},
+        { x: new Date(Number(year[5]),Number(month[5])-1,Number(day[5]),Number(hour[5]),Number(minute[5])), y: Number(a[5])},
+	{ x: new Date(Number(year[6]),Number(month[6])-1,Number(day[6]),Number(hour[6]),Number(minute[6])), y: Number(a[6])},
+        { x: new Date(Number(year[7]),Number(month[7])-1,Number(day[7]),Number(hour[7]),Number(minute[7])), y: Number(a[7])}
+        ] 
+      var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+          text: "Change in WaterLevel in cm"
+      },
+      axisX:{
+        interval: 1,
+        intervalType: "minute",
+        valueFormatString: "hh:mm TT",
+      },
+	axisY:{
+        interval: 300,
+       
+        
+      },
+      data: [
+      {
+        type: "line",
+        dataPoints: tem
+     }
+     ]
+});
+
+chart.render();
+
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+<center>
+  <div id="chartContainer" style="height: 500px; width: 80%;"></div>
+  <br>
+
+</center>
+  

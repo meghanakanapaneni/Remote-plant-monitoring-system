@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html>
+<title>Remote Plant Monitoring System</title>
+<style>
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {background-color: #9ACD32;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #DB7093; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+.button6 {border-radius: 50%;}
+
+#awan {
+
+top:0px;left:0px;
+width:100%;
+height:100%;
+text-align:center;
+margin:0px;
+padding:0px;
+background: url(http://www.cintas.com/ready/wp-content/uploads/2017/03/lightshiningonagreenspro_379529.jpg);
+padding-top:100px;
+padding-bottom:10px;
+  width: 100%;
+  height: 635px;
+  animation: awan-animasi 10s linear infinite;
+  -ms-animation: awan-animasi 10s linear infinite;
+  -moz-animation: awan-animasi 10s linear infinite;
+  -webkit-animation: awan-animasi 10s linear infinite;
+}
+
+@keyframes awan-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+@-webkit-keyframes awan-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+@-ms-keyframes awan-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+@-moz-keyframes awan-animasi {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  };
+}
+
+</style>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
+ <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Location</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+  <a href="addplant.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Add Plant</a>
+  
+  
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button" title="Notifications">Plants<i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="detail.html" class="w3-bar-item w3-button">Plant1</a>
+  	<a href="detail.html" class="w3-bar-item w3-button">Plant2</a>
+	</div>
+	</div>
+<a href="#weather" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Weather Station</a>
+
+<a href="plantmap.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Plants Map</a>
+<a href="login.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
+
+
+
+    </div>
+  </div>
+
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">Team</a>
+    <a href="#work" class="w3-bar-item w3-button">Work</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+   
+<a href="plantmap.html" class="w3-bar-item w3-button">Plants Map</a>
+<a href="login.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
+
+ </div>
+</div>
+
+<!-- Image Header -->
+<br>
+<br>
+<center><h1>Remote Plant Monitoring System</h1></center>
+<div class="w3-display-container w3-animate-opacity">
+  <div id="awan"></div>
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+   
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container"> 
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h4>Oh snap! We just showed you a modal..</h4>
+      <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+    </header>
+    <div class="w3-container">
+      <p>Cool huh? Ok, enough teasing around..</p>
+      <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>Modal footer</p>
+    </footer>
+  </div>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>OUR TEAM</h2>
+<p>Meet the team</p>
+
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="https://i.pinimg.com/736x/25/b9/24/25b924f1d18fea2c7dfcb26a9905c1e8--funny-emoji-emoji-png.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Deeksha</h3>
+  
+</div>
+
+<div class="w3-quarter">
+  <img src="https://ih0.redbubble.net/image.106659981.2146/flat,800x800,075,f.u1.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Meghana</h3>
+
+</div>
+<div class="w3-quarter">
+  <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Emoji_with_Eyes_Opened_large.png?v=1480481056" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>SaiKeerthi</h3>
+  
+</div>
+<div class="w3-quarter">
+  <img src="https://i.pinimg.com/originals/39/5d/5f/395d5ffb23389ffdd54abdaa02e80759.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>KeerthiPriyanka</h3>
+  
+</div>
+
+
+<div class="w3-quarter">
+  <img src="https://lovelace-media.imgix.net/uploads/191/b7b46e40-c4f9-0132-4598-0ebc4eccb42f.png?w=740&h=740&fit=crop&crop=faces&auto=format&q=70" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Padmini</h3>
+  
+</div>
+
+<div class="w3-quarter">
+  <img src="https://cdn.shopify.com/s/files/1/0185/5092/products/persons-0071.png?v=1369543823" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>SaiVamshi</h3>
+ 
+</div>
+
+</div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<div >
+<center><h2 style="color:white;">Our Work</h2></center>
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<h2 class="w3-center" style="color:white;">Raspberry Pi Interfacing</h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="http://www.uugear.com/wordpress/wp-content/uploads/2014/01/RPi_DHT11.jpg" style="width:100%;min-height:350px;max-height:500px;">
+  <img class="mySlides" src="https://i.ytimg.com/vi/Mnqd2HxwGK4/hqdefault.jpg" style="width:100%;height:500px;">
+  <img class="mySlides" src="https://raw.githubusercontent.com/magwest/LivingThing/master/Breadboard.png" style="width:100%;height:500px;">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+<br>
+<p>The project titled â€œREMOTE PLANT MONITORING SYSTEMâ€ is deliberate to
+construct an monitoring mechanism which switches the water pump in
+between ON and OFF states on detecting the moisture level of the soil . The
+moisture is determined by calculating the conductivity or resistivity between
+these nails . If the moisture content of soil is low then the resistivity between
+the nails is high or the conductivity between them is low and as the moisture
+content increases conductivity increases and resistivity decreases . Apart
+from these we are using  Ultra Sonic Sensors,
+GSM, Temperature Sensor, Motor Driver , humidity sensor.The advantage of using this
+system is to lessen human interference.</p>
+</div>
+
+
+<!-- GoogleMaps -->
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2 style="color:white;">Location</h2>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  
+      <div id="map"></div>
+	
+    <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var uluru = {lat: 13.5482, lng: 80.0002};
+	//var uluru2 = {lat: 13.5482, lng: 80.0005};	
+	var uluru1 = {lat: 13.5482, lng: 80.0202};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">PLANT MOISTURE</h1>'+
+            //'<div id="bodyContent">'+
+            //'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            //'sandstone rock formation in the southern part of the '+
+            /*'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+            'Aboriginal people of the area. It has many springs, waterholes, '+
+            'rock caves and ancient paintings. Uluru is listed as a World '+
+            'Heritage Site.</p>'+*/
+            '<p>Attribution: Uluru, <a href="http://deekshaummadi.pythonanywhere.com/moist.html">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> </p>'+
+            
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: uluru1,
+          map: map,
+          title: 'WATER'
+        });
+      // marker.addListener('click', function() {
+        //  infowindow.open(map, marker);
+        //});
+ 
+     /*  var marker = new google.maps.Marker({
+          position: uluru2,
+          map: map,
+          title: 'plant 2'
+        });*/
+ 
+
+	var marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+          title: 'PLANT 1'
+        });
+       marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGYnOSw_ByS5jzZhnkGIV1Yy67lSj4yKY&callback=initMap">
+    </script>
+  
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #123456;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: blue;
+    text-align: center;
+    padding: 16px 15px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: yellow;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e8e8e8;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #e2e2e2}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    color: #5B5B5B;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 199;
+    color: #222221;
+}
+
+h1 {
+    font-size: 10000em;
+}
+
+h2 {
+    font-size: 3.2em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p, ul, ol {
+    margin-top: 0;
+    line-height: 170%;
+}
+
+
+
+a {
+    color: #5E5E5E;
+}
+
+a:hover {
+}
+
+#wrapper {
+}
+
+.container {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+/* Header */
+
+#header-wrapper {
+    overflow: hidden;
+    height: 600px;
+    background-color: #eeeeee
+}
+
+#header {
+    overflow: hidden;
+    width: 1000px;
+    height: 150px;
+    margin: 0 auto;
+    padding: 0px 0px;
+}
+
+
+
+/* Page */
+
+#page {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 30px 0px;
+    background: #FFFFFF;
+}
+
+/* Content */
+
+#content {
+    float: left;
+    width: 660px;
+    padding: 0px 0px 0px 0px;
+}
+
+.post {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.post .title {
+    padding: 7px 0px 0px 0px;
+    letter-spacing: -1px;
+}
+
+.post .title a {
+    border: none;
+    text-decoration: none;
+    color: #222222;
+}
+
+.post .meta {
+    margin-bottom: 30px;
+    padding: 10px 0px 0px 0px;
+    text-align: left;
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.post .meta .date {
+    float: left;
+}
+
+.post .meta .posted {
+    float: right;
+}
+
+.post .meta a {
+}
+
+.post .entry {
+    padding: 0px 0px 40px 0px;
+    text-align: justify;
+}
+
+
+/* Calendar */
+
+#calendar {
+}
+
+#calendar_wrap {
+    padding: 20px;
+}
+
+#calendar table {
+    width: 100%;
+}
+
+#calendar tbody td {
+    text-align: center;
+}
+
+#calendar #next {
+    text-align: right;
+}
+
+/* Three Column Footer Content */
+
+#footer-content-wrapper {
+    background-color: #ffffff
+}
+
+#footer-content {
+    overflow: hidden;
+    width: 1000px;
+    margin: 0px auto;
+    padding: 50px 0px;
+    color: #FFFFFF;
+}
+
+#footer-content h2 {
+    color: #FFFFFF;
+}
+
+#footer-content a {
+}
+
+#footer-bg {
+    overflow: hidden;
+    padding: 30px 0px;
+    background: #E8E8E8;
+}
+
+#footer-content h2 {
+    margin: 0px;
+    padding: 0px 0px 20px 0px;
+    font-size: 26px;
+    color: #FFFFFF;
+}
+
+#footer-content #fbox1 {
+    float: left;
+    width: 300px;
+    margin-right: 50px;
+}
+
+#footer-content #fbox2 {
+    float: left;
+    width: 300px;
+}
+
+#footer-content #fbox3 {
+    float: right;
+    width: 300px;
+}
+
+#footer-content a {
+}
+
+#column1 {
+    float: left;
+    width: 290px;
+    margin-right: 30px;
+}
+
+#column2 {
+    float: left;
+    width: 280px;
+}
+
+#column3 {
+    float: right;
+    width: 260px;
+}
+
+/* Footer */
+
+#footer {
+    height: 140px;
+    margin: 0 auto;
+    padding: 50px 0 15px 0;
+    font-family: 'Abel', sans-serif;
+    background-color: #ffffff
+}
+
+#footer p {
+    margin: 0;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    line-height: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2A2A2A;
+}
+
+#footer a {
+    color: #2A2A2A;
+}
+
+
+.list-style1 {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.list-style1 a {
+    color: #7F7F7F;
+}
+
+/** LIST STYLE 1 */
+
+ul.style1 {
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+}
+
+ul.style1 li {
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid #162738;
+    line-height: 160%;
+}
+
+ul.style1 a {
+    display: block;
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    color: #93B2A0;
+}
+
+ul.style1 a:hover {
+    text-decoration: underline;
+}
+
+ul.style1 .first {
+    border-top: none;
+    padding-top: 0px;
+}
+
+#featured-content {
+    overflow: hidden;
+    width: 1000px;
+    margin: 0px auto;
+    padding: 30px 0px;
+    border-bottom: 5px solid #E9EAEE;
+}
+
+#featured-content h2 {
+    padding: 0px 0px 20px 0px;
+    font-size: 30px;
+}
+
+#featured-content #column1 {
+    float: left;
+    width: 300px;
+    margin-right: 50px;
+}
+
+#featured-content #column2 {
+    float: left;
+    width: 300px;
+}
+
+#featured-content #column3 {
+    float: right;
+    width: 300px;
+}
+
+.button a {
+    display: block;
+    float: left;
+    width: 88px;
+    padding: 5px 5px;
+    margin-right: 10px;
+    background: #132434;
+    border-radius: 5px;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    color: #5B5B5B;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    color: #222222;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p, ul, ol {
+    margin-top: 0;
+    line-height: 180%;
+}
+
+a {
+    color: #5E5E5E;
+}
+
+a:hover {
+}
+
+/** LIST STYLE 1 */
+
+ul.style1 {
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+}
+
+ul.style1 li {
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid #162738;
+    line-height: 160%;
+}
+
+ul.style1 a {
+    display: block;
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    color: #93B2A0;
+}
+
+ul.style1 a:hover {
+    text-decoration: underline;
+}
+
+ul.style1 .first {
+    border-top: none;
+    padding-top: 0px;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+ border-top: 16px solid blue;
+ border-right: 16px solid green;
+ border-bottom: 16px solid red;
+ border-left: 16px solid pink;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rota222222222222te(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+</style>
+
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+
+
+
+</head>
+<body style="background-color:#E6E6FA">
+
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=ifmr&key=AIzaSyA0_joO7bSLRMLfjQ-9UN8yRuvWi5JWqs8" allowfullscreen></iframe
+<br><br><br><br><br><br><br><br>
+
+
+</div>
+
+
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Sricity, Chittor</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +91 9666484876</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge">
+      </i>    deeksha.u16@iiits.in</p>
+    </div>
+   
+  </div>
+</div>
+<div class="w3-container w3-padding-64 w3-theme-l5" id="weather">
+
+<br>
+<center><h1>WEATHER STATION</h1></center>
+
+<br>
+<center>  <table background="http://www.krugle.com/images/sliders/small_cloud.png">
+<tr height="150"><td width="300"><br><br><br><h4>&emsp;&emsp;Temperature:{{tem}}<sup>o</sup>C</h4><h4>&emsp;&emsp;Humidity:{{hum}}gm/cm<sup>3</sup></h4></tr></td>
+</table></center>
+
+<script>
+ 
+
+if ({{rain}}==0) {
+var t="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;It's Not Raining";
+document.write(t.big().italics().bold());
+}
+
+else{
+var t="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;It's Raining";
+document.write(t.big().italics().bold());
+
+}
+
+</script>
+<br><br>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+<div style="width: 600px; height: 400px; margin: 0 auto">
+    <div id="container-speed" style="width: 300px; height: 200px; float: left"></div>
+    <div id="container-rpm" style="width: 300px; height: 200px; float: left"></div>
+</div>
+
+<script>
+var gaugeOptions = {
+
+    chart: {
+        type: 'solidgauge'
+    },
+
+    title: null,
+
+    pane: {
+        center: ['50%', '85%'],
+        size: '140%',
+        startAngle: -90,
+        endAngle: 90,
+        background: {
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+            innerRadius: '60%',
+            outerRadius: '100%',
+            shape: 'arc'
+        }
+    },
+
+    tooltip: {
+        enabled: false
+    },
+
+    // the value axis
+    yAxis: {
+        stops: [
+            [0.1, '#55BF3B'], // green
+            [0.5, '#DDDF0D'], // yellow
+            [0.9, '#DF5353'] // red
+        ],
+        lineWidth: 0,
+        minorTickInterval: null,
+        tickAmount: 2,
+        title: {
+            y: -70
+        },
+        labels: {
+            y: 16
+        }
+    },
+
+    plotOptions: {
+        solidgauge: {
+            dataLabels: {
+                y: 5,
+                borderWidth: 0,
+                useHTML: true
+            }
+        }
+    }
+};
+
+// The speed gauge
+
+//temperature case
+var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 50,
+        title: {
+            text: 'Temperature'
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    series: [{
+        name: 'Temperature',
+        data: [{{tem}}],
+        dataLabels: {
+            format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                   '<span style="font-size:12px;color:silver">celcius</span></div>'
+        },
+        tooltip: {
+        //    valueSuffix: ' degree celcius'
+        }
+    }]
+
+}));
+
+// The RPM gauge
+//humidity case
+
+
+var chartHum = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 200,
+        title: {
+            text: 'Humidity'
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    series: [{
+        name: 'Humidity',
+        data: [{{hum}}],
+        dataLabels: {
+            format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                   '<span style="font-size:12px;color:silver">gm/cc</span></div>'
+        },
+        tooltip: {
+          //  value1Suffix: ' gm/cc'
+        }
+    }]
+
+}));
+
+
+
+
+
+/*var chartHum = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 200,
+        title: {
+            text: 'Humidity'
+        }
+    },
+
+    series: [{
+        name: 'Humidity',
+        data: [30],
+        dataLabels: {
+            format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+                   '<span style="font-size:12px;color:silver">* 1000 / min</span></div>'
+        },
+        tooltip: {
+            valueSuffix: ' gram/cubiccm'
+        }
+    }]
+
+}));
+*/
+// Bring life to the dials
+setInterval(function () {
+    // Speed
+    var point,
+        newVal,
+        inc;
+//temperature readings changing part
+    if (chartSpeed) {
+        point = chartSpeed.series[0].points[0];
+       // inc = Math.round((Math.random() - 0.5) * 10);
+        newVal = {{tem}};
+
+        //if (newVal < 0 || newVal > 40) {
+          //  newVal = point.y - inc;
+        //}
+
+        point.update(newVal);
+    }
+
+    // RPM
+//humidity changing part
+    if (chartHum) {
+        point = chartHum.series[0].points[0];
+       // inc = Math.random() - 0.5;
+        //newVal = point.y + inc;
+
+        //if (newVal < 0 || newVal > 5) {
+          //  newVal = point.y - inc;
+        //}
+	newVal={{hum}};
+        point.update(newVal);
+    }
+}, 2000);
+
+
+</script>
+
+
+</div>
+
+
+
+
+
+<script>
+// Script for side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
