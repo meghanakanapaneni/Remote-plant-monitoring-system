@@ -24,7 +24,7 @@ def login(request):
 def plantmap(request):
 	received_data=Plant.objects.all()[len(Plant.objects.all())-1]
 	data=Plant.objects.all()[len(Plant.objects.all())-2]
-	received11_data=weather.objects.all()[len(weather.objects.all())-1]
+	received_data=weather.objects.all()[len(weather.objects.all())-1]
 	rain_data=str(received11_data.rain)
 	moisture=str(data.moisture)
 	moisture1=str(received_data.moisture)
